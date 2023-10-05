@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    color: black;
+    color: #696969;
 }
 .left_nav p{
     font-weight: bold;

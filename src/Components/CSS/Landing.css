@@ -1,0 +1,54 @@
+.landing{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+}
+.landing h1{
+    font-size: 72px;
+    position: relative;
+    margin-bottom: 0px;
+    color: #696969;
+}
+.landing h1::before{
+    content: "〇";
+    position: absolute;
+    right: -25px;
+    top: -25px;
+    font-size: 28px;
+}
+.landing .state{
+    font-weight: bold;
+    color: #696969;
+}
+.landing .place{
+    color: #696969;
+}
+.landing .place svg{
+    margin-right:10px;
+}
+.forecast{
+    display: flex;
+    margin: 0;
+    padding: 0;
+    justify-content: space-around;
+    color: #696969;
+}
+.forecast li{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.forecast li .heat{
+    position: relative;
+    width: fit-content;
+    margin: 15px auto;
+}
+.forecast li .heat::before{
+    content: "〇";
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    font-size: 10px;
+}

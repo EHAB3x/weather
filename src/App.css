@@ -19,6 +19,29 @@
   }
 }
 
+@media screen and (max-width: 768px) {
+  .App {
+    flex-direction: column;
+  }
+  .App .left{
+    width: 100%;
+  }
+  .App .right{
+    width: 100%;
+  }
+  
+}
+@media screen and (min-width: 768px) and (max-width:1023px){
+  .App {
+    flex-direction: column;
+  }
+  .App .left{
+    width: 100%;
+  }
+  .App .right{
+    width: 100%;
+  }
+}
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
