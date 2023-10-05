@@ -1,0 +1,11 @@
+.left_nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: black;
+}
+.left_nav p{
+    font-weight: bold;
+    font-size: 18px;
+    letter-spacing: 2px;
+}
