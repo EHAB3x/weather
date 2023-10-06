@@ -46,9 +46,12 @@ const Landing = () => {
           setAvgTemp(weather.forecast);
           setAllState(weather.forecast)
         })
-        .catch(err => console.log('Waiting...'))
+        .catch(err => console.log('Waiting...'));
+
       },[latitude,longitude])
       console.log(weather);
+
+      
   return (
     <>
     <div className="landing">
@@ -63,7 +66,7 @@ const Landing = () => {
         const d = new Date(day.date);
         console.log(weather);
         return(
-          <li key={ind}>
+          <li className={ind===0 && 'active'} key={ind}>
             <h4>{weekday[d.getDay()]}</h4>
             <span className='heat'>{avgTemp.forecastday[ind].day.avgtemp_c}</span>
             <span>{allState.forecastday[ind].day.condition.text}</span>

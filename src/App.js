@@ -1,6 +1,7 @@
 import './App.css';
 import Landing from './Components/Landing';
 import LeftNavbar from './Components/LeftNavbar';
+import RightNav from './Components/RightNav';
 
 
 function App() {
@@ -15,7 +16,7 @@ function App() {
       </div>
 
       <div className='right'>
-        <p>Yes</p>
+        <RightNav />
       </div>
     </div>
   );

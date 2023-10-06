@@ -4,6 +4,7 @@
     justify-content: center;
     align-items: center;
     height: 50vh;
+    background-color: #fafafa;
 }
 .landing h1{
     font-size: 72px;
@@ -34,11 +35,30 @@
     padding: 0;
     justify-content: space-around;
     color: #696969;
+    background-color: #fafafa;
 }
 .forecast li{
     display: flex;
     flex-direction: column;
     text-align: center;
+    transition: .3s;
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -ms-transition: .3s;
+    -o-transition: .3s;
+    border-radius: 7px;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    -ms-border-radius: 7px;
+    -o-border-radius: 7px;
+    padding: 0 25px 15px ;
+}
+.forecast li:hover{
+    background-color: #f1f1f1;
+}
+.forecast li.active{
+    border: 1px solid #333;
+    border-radius: 7px;
 }
 .forecast li .heat{
     position: relative;
@@ -55,7 +75,8 @@
 
 @media screen and (max-width:768px){
     .forecast{
-        flex-direction: column;
+        display: grid;
+        grid-template-columns: repeat(auto-fill,minmax(190px, 1fr));
     }
     .forecast li{
         width: fit-content;
@@ -64,6 +85,7 @@
 }
 @media screen and (min-width:768px) and (max-width:1023px){
     .forecast{
-        flex-direction: column;
+        display: grid;
+        grid-template-columns: repeat(auto-fill,minmax(190px, 1fr));
     }
 }
