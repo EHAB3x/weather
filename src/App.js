@@ -3,6 +3,7 @@ import Forecast from './Components/Forecast';
 import Landing from './Components/Landing';
 import LeftNavbar from './Components/LeftNavbar';
 import RightNav from './Components/RightNav';
+import Toggler from './Components/Toggler';
 
 
 function App() {
@@ -12,8 +13,9 @@ function App() {
   return (
     <div className="App">
       <div className='left'>
-      <LeftNavbar />
-      <Landing />
+        <LeftNavbar />
+        <Landing />
+        <Toggler />
       </div>
 
       <div className='right'>

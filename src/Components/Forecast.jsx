@@ -23,7 +23,7 @@ const Forecast = () => {
             {forecast.map((hour, ind)=>{
                 return(
                     <li key={ind}>
-                        <h4>{hour.time.slice(10,16)}</h4>
+                        <h4>{hour.time.slice(10,16)} {hour > 12 ? "PM" : "AM"}</h4>
                         <p>{hour.temp_c}</p>
                         <span>{hour.condition.text}</span>
                     </li>
