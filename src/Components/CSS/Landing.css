@@ -1,10 +1,16 @@
+.content{
+    height: calc(100vh - 69px);
+    background-color: #fafafa;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 .landing{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 50vh;
-    background-color: #fafafa;
 }
 .landing h1{
     font-size: 72px;
@@ -35,7 +41,6 @@
     padding: 0;
     justify-content: space-around;
     color: #696969;
-    background-color: #fafafa;
 }
 .forecast li{
     display: flex;
@@ -74,7 +79,12 @@
 }
 
 @media screen and (max-width:768px){
+    .content{
+        height: unset;
+    }
     .forecast{
+        padding: 40px 0;
+        width: 100%;
         display: grid;
         grid-template-columns: repeat(auto-fill,minmax(190px, 1fr));
     }

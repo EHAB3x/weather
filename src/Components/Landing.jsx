@@ -5,7 +5,7 @@ import { faHome} from '@fortawesome/free-solid-svg-icons';
 const Landing = () => {
     const [latitude, setLatitude]=useState(0);
     const [longitude, setLongitude]=useState(0);
-    const [place, setPlace]=useState('');
+    const [place, setPlace]=useState('Soul Buoy');
     const [weather, setWeather]=useState({});
     const [temp, setTemp]=useState(0);
     const [state, setState]=useState('');
@@ -27,14 +27,18 @@ const Landing = () => {
 
       useEffect(()=>{
         
-        fetch(`https://geocode.maps.co/reverse?lat=${latitude}&lon=${longitude}`)
+       fetch(`https://geocode.maps.co/reverse?lat=${latitude}&lon=${longitude}`)
         .then(res => res.json())
-        .then(data => setPlace(Object.values(data.address)[0]))
+        .then(data => {
+          setPlace(Object.values(data.address)[0])
+          window.localStorage.setItem('place',Object.values(data.address)[0])
+        })
         .catch(err => console.log('Waiting...'))
 
         getLocation();
 
-        fetch(`https://api.weatherapi.com/v1/forecast.json?key=ef772a792c9e479980654507230510&q=${window.localStorage.getItem("place")}&days=7&aqi=no&alerts=no`)
+        setTimeout(() => {
+          fetch(`https://api.weatherapi.com/v1/forecast.json?key=ef772a792c9e479980654507230510&q=${place}&days=7&aqi=no&alerts=no`)
         .then(res => res.json())
         .then(data => {
           setWeather(data);
@@ -45,10 +49,10 @@ const Landing = () => {
           setAllState(weather.forecast)
         })
         .catch(err => console.log('Waiting...'));
-
-      },[latitude,longitude])   
+        }, 2000);// eslint-disable-next-line
+      },[latitude,longitude,place,weather])   
   return (
-    <>
+    <div className='content'>
     <div className="landing">
           <h1>{temp}</h1>
         <p className='state'>{state}</p>
@@ -60,7 +64,7 @@ const Landing = () => {
         const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
         const d = new Date(day.date);
         return(
-          <li className={ind===0 && 'active'} key={ind}>
+          <li className={ind===0 ? 'active' : undefined} key={ind}>
             <h4>{weekday[d.getDay()]}</h4>
             <span className='heat'>{ind === 0 ? temp : avgTemp.forecastday[ind].day.avgtemp_c}</span>
             <span>{allState.forecastday[ind].day.condition.text}</span>
@@ -68,7 +72,7 @@ const Landing = () => {
         )
       })}
     </ul>
-    </>
+    </div>
   )
 }
 

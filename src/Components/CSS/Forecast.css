@@ -1,0 +1,44 @@
+.hourly_forecast{
+    background-color: #f6f6f6;
+    height: calc(100vh - 133px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.hourly_forecast h3{
+    margin: 0;
+    text-align: center;
+    padding: 15px 0;
+}
+.hourly_forecast ul{
+    margin: 0;
+    padding: 20px;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 20px;
+}
+.hourly_forecast ul li{
+    text-align: center;
+    border: 1px solid #333;
+    border-radius: 7px;
+    padding: 0 25px 15px ;
+    transition: .3s;
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -ms-transition: .3s;
+    -o-transition: .3s;
+}
+.hourly_forecast ul li:hover{
+    background-color: #f1f1f1;
+}
+.hourly_forecast ul li p{
+    position: relative;
+}
+.hourly_forecast ul li p::before{
+    content: "〇";
+    position: absolute;
+    right: 0px;
+    top: -5px;
+    font-size: 10px;
+}
