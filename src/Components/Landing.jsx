@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './CSS/Landing.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faDroplet, faHome, faHomeAlt, faWind } from '@fortawesome/free-solid-svg-icons';
+import { faHome} from '@fortawesome/free-solid-svg-icons';
 const Landing = () => {
     const [latitude, setLatitude]=useState(0);
     const [longitude, setLongitude]=useState(0);

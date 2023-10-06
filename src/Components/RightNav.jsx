@@ -1,8 +1,13 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './CSS/RightNav.css'
 const RightNav = () => {
-    const time = new Date();
-    console.log(time);
+    const [time, setTime] = useState(new Date());
+    useEffect(()=>{
+        setInterval(()=>{
+            const time = new Date();
+            setTime(time);
+        },1000)
+    },[])
   return (
     <nav className='right_nav'>
         <h2>{time.getHours() < 12 ? "Good Morning": "Good Evening"}</h2>
