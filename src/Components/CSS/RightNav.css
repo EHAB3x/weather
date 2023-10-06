@@ -1,0 +1,13 @@
+.right_nav{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    color: #696969;
+    background-color: #f6f6f6;
+    color: black;
+}
+.right_nav .time{
+    font-size: 20px;
+    margin: 20px 0;
+}

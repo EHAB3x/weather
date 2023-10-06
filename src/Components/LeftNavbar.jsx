@@ -5,7 +5,6 @@ const LeftNavbar = () => {
   useEffect(()=>{
     const today= new Date();
     setToday(today.toLocaleDateString());
-    console.log(today.toLocaleDateString());
   },[])
   return (
     <nav className='left_nav'>

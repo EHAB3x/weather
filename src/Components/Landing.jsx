@@ -21,8 +21,6 @@ const Landing = () => {
       }
       
       function showPosition(position) {
-        console.log(position.coords.latitude)
-        console.log(position.coords.longitude)
         setLatitude(position.coords.latitude)
         setLongitude(position.coords.longitude)
       }
@@ -48,10 +46,7 @@ const Landing = () => {
         })
         .catch(err => console.log('Waiting...'));
 
-      },[latitude,longitude])
-      console.log(weather);
-
-      
+      },[latitude,longitude])   
   return (
     <>
     <div className="landing">
@@ -64,11 +59,10 @@ const Landing = () => {
       {days.map((day, ind)=>{
         const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
         const d = new Date(day.date);
-        console.log(weather);
         return(
           <li className={ind===0 && 'active'} key={ind}>
             <h4>{weekday[d.getDay()]}</h4>
-            <span className='heat'>{avgTemp.forecastday[ind].day.avgtemp_c}</span>
+            <span className='heat'>{ind === 0 ? temp : avgTemp.forecastday[ind].day.avgtemp_c}</span>
             <span>{allState.forecastday[ind].day.condition.text}</span>
           </li>
         )
