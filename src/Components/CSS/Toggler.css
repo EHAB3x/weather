@@ -14,6 +14,7 @@
     cursor: pointer;
     z-index: 99999;
     outline: 0;
+    display: none;
 }
 .toggler span{
     display: block;
@@ -21,4 +22,14 @@
     height: 3px;
     background-color: white;
     margin-bottom: 5px;
+}
+@media screen and (max-width:768px){
+    .toggler{
+        display: unset;
+    }
+}
+@media screen and (min-width:768px) and (max-width:1023px){
+    .toggler{
+        display: unset;
+    }
 }
