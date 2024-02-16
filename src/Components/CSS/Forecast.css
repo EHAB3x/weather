@@ -1,5 +1,5 @@
 .hourly_forecast{
-    background-color: #f6f6f6;
+    background-color: #1A2238;
     height: calc(100vh - 233px);
     display: flex;
     flex-direction: column;
@@ -10,6 +10,7 @@
     margin: 0;
     text-align: center;
     padding: 15px 0;
+    color: #FF6A3D;
 }
 .hourly_forecast ul{
     margin: 0;
@@ -18,7 +19,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
     gap: 20px;
-    background-color: #f6f6f6;
+    background-color: #1A2238;
 }
 .hourly_forecast ul li{
     text-align: center;
@@ -30,9 +31,12 @@
     -moz-transition: .3s;
     -ms-transition: .3s;
     -o-transition: .3s;
+    background-color: #FF6A3D;
+    color: white;
 }
 .hourly_forecast ul li:hover{
     background-color: #f1f1f1;
+    color: #FF6A3D;
 }
 .hourly_forecast ul li p{
     position: relative;
